@@ -1,14 +1,33 @@
+@import "../../styles/core";
 .sidebar {
-  width: 250px;
-  background-color: hotpink;
+  width: 50px;
+  background-color: $shade;
   height: 100%;
   display: flex;
   flex-direction: column;
-
   .title {
     text-decoration: none;
     font-size: 1.8em;
     text-decoration: none;
-    color: blueviolet;
+    color: $accent2;
+    font-family: $heading-font;
+    margin: 10px;
+    word-wrap: none;
+  }
+  a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: $text-color;
+    &.active {
+      &:after {
+        content: "hmm";
+      }
+    }
+  }
+}
+
+@media all and (min-width: 800px) {
+  .sidebar {
+    width: auto;
   }
 }

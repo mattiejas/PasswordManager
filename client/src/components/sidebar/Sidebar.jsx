@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Button from '../button/Button';
 
@@ -10,7 +10,7 @@ const Sidebar = () => (
     <Link to="/" href="/" className={classes.title}>
       Password Manager
     </Link>
-    <Link to="/test" href="/test">Test</Link>
+    <NavLink to="/test" href="/test" activeClassName={classes.active}><span>Test</span></NavLink>
     <Button title="Open Database" />
   </div>
 );

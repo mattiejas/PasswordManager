@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 import Sidebar from '../../components/sidebar/Sidebar';
 
+import classes from './Layout.scss';
+
 const Layout = ({ children }) => (
-  <div>
+  <div className={classes.layout}>
     <Sidebar />
     {children}
   </div>
