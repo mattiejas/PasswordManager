@@ -1,5 +1,11 @@
 module.exports = {
   devtool: 'inline-source-map',
+  devServer: {
+    hot: true,
+    contentBase: `${__dirname}/`,
+    historyApiFallback: true,
+    port: '3987',
+  },
   module: {
     rules: [
       {

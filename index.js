@@ -1,10 +1,10 @@
 const {
   app,
   BrowserWindow
-} = require('electron')
-const path = require('path')
-const url = require('url')
-const { runServer } = require('./server')
+} = require('electron');
+const path = require('path');
+const url = require('url');
+const { runServer } = require('./server');
 
 // Run server now to serve index.html when window has been created
 runServer();
@@ -22,7 +22,7 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  win.loadURL('http://localhost:3000');
+  win.loadURL('http://localhost:3987');
 
   // Open the DevTools.
   // win.webContents.openDevTools()

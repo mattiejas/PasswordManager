@@ -10,6 +10,7 @@ const Sidebar = () => (
     <Link to="/" href="/" className={classes.title}>
       Password Manager
     </Link>
+    <Link to="/test" href="/test">Test</Link>
     <Button title="Open Database" />
   </div>
 );

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import Home from './views/home/Home';
+import Test from './views/test/Test';
 import Layout from './views/shared/Layout';
 
 const App = ({ store }) => (
@@ -11,7 +12,8 @@ const App = ({ store }) => (
     <Router>
       <Layout>
         <Switch>
-          <Route path="/" component={Home} />
+          <Route exact path="/" component={Home} />
+          <Route path="/test" component={Test} />
         </Switch>
       </Layout>
     </Router>

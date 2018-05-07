@@ -38,13 +38,9 @@ module.exports = (_, { mode }) => {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
-        template: 'client/public/index.html',
+        template: `${__dirname}/public/index.html`,
       }),
       new CleanWebpackPlugin(['dist']),
     ],
-    devServer: {
-      hot: true,
-      contentBase: '/',
-    },
   }, config);
 };
