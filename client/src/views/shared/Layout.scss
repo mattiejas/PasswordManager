@@ -1,4 +1,11 @@
+@import "../../styles/core";
+
 .layout {
   display: flex;
   height: 100%;
+}
+.view {
+  padding: 20px;
+  background-color: $background;
+  width: 100%;
 }

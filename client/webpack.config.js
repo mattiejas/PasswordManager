@@ -10,37 +10,49 @@ module.exports = (_, { mode }) => {
   const isDevBuild = mode === 'development';
   const config = isDevBuild ? dev : prod;
 
-  return merge({
-    entry: './client/src/index.jsx',
-    output: {
-      path: `${__dirname}/dist`,
-      filename: '[name].[hash].bundle.js',
-    },
-    resolve: {
-      extensions: ['.js', '.jsx'],
-    },
-    module: {
-      rules: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
+  return merge(
+    {
+      entry: ['./client/src/index.jsx'],
+      output: {
+        path: `${__dirname}/dist`,
+        filename: '[name].[hash].bundle.js',
+      },
+      resolve: {
+        extensions: ['.js', '.jsx'],
+      },
+      module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+            },
           },
-        },
-        {
-          test: /\.(png|jpg|jpeg|gif|svg)$/,
-          exclude: /node_modules/,
-          use: 'url-loader?limit=25000',
-        },
+          {
+            test: /\.(png|jpg|jpeg|gif|svg)$/,
+            exclude: /node_modules/,
+            use: 'url-loader?limit=25000',
+          },
+          {
+            test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+              publicPath: '../',
+            },
+          },
+        ],
+      },
+      plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+          template: `${__dirname}/public/index.html`,
+        }),
+        new CleanWebpackPlugin(['dist']),
       ],
     },
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new HtmlWebpackPlugin({
-        template: `${__dirname}/public/index.html`,
-      }),
-      new CleanWebpackPlugin(['dist']),
-    ],
-  }, config);
+    config,
+  );
 };

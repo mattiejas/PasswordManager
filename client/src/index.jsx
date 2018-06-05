@@ -5,6 +5,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { routerMiddleware, routerReducer } from 'react-router-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 
+import '@fortawesome/fontawesome-free-solid';
 import './styles/index.scss';
 
 import reducers from './modules';

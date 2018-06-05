@@ -1,33 +1,45 @@
 @import "../../styles/core";
 .sidebar {
-  width: 50px;
+  width: auto;
   background-color: $shade;
   height: 100%;
   display: flex;
   flex-direction: column;
   .title {
     text-decoration: none;
-    font-size: 1.8em;
-    text-decoration: none;
-    color: $accent2;
+    background: none;
+    color: $text-color;
     font-family: $heading-font;
-    margin: 10px;
-    word-wrap: none;
+    margin: 10px 0px;
+    white-space: nowrap;
   }
   a {
-    margin-left: 10px;
+    padding: 10px 20px;
     text-decoration: none;
     color: $text-color;
+    background-color: $accent1;
+    & > .active-icon {
+      display: none;
+    }
     &.active {
-      &:after {
-        content: "hmm";
+      background-color: $accent2;
+      color: #fff;
+      & > .active-icon {
+        display: inline-block;
+        padding-right: 8px;
       }
     }
   }
-}
-
-@media all and (min-width: 800px) {
-  .sidebar {
-    width: auto;
+  .header {
+    margin: 10px 0 0 0;
+    padding: 10px;
+  }
+  hr {
+    margin-bottom: 0;
+  }
+  .open {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
   }
 }

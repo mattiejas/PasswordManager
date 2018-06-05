@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:200,400');
+
 @import "core";
+@import "fonts";
 
 :global {
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    &:focus {
+      outline: none;
+    }
   }
   html, body, #root {
     width: 100%;
@@ -13,5 +18,12 @@
     font-family: $body-font;
     font-size: 18px;
     color: $text-color;
+  }
+  hr {
+    margin: 6px 0 10px 0;
+    color: $text-color;
+    border: 0;
+    border-top: 1px solid lighten($text-color, 45);
+    height: 1px;
   }
 }

@@ -1,11 +1,19 @@
+@import "../../styles/core";
+
 .button {
   height: 35px;
-  background-color: white;
+  background-color: $accent2;
   border-radius: 3px;
   padding: 10px;
   margin: 10px;
   border: none;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
   &:hover {
-    background-color: darken(white, 10);
+    background-color: darken($accent2, 6);
+  }
+  &:active {
+    background-color: darken($accent2, 20);
+    color: #fff;
   }
 }
